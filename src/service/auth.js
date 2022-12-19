@@ -7,10 +7,15 @@ export const callSignUp = (data) => {
   });
 };
 
-export const login = (data) => {
-  return callApi("/auth/user", {
+/**
+ * 로그인
+ * @param { username : String, password : String } params
+ * @returns
+ */
+export const login = (params) => {
+  return callApi("/login", {
     method: "POST",
-    data,
+    params,
   });
 };
 
