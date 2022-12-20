@@ -121,7 +121,7 @@ export default {
     splashing() {
       setTimeout(() => {
         this.isLoaded = true;
-      }, 3000);
+      }, 100);
     },
   },
 
