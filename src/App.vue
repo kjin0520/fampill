@@ -92,6 +92,9 @@
 
 <script>
 import { mapGetters } from "vuex";
+
+import { login } from "@/service/auth.js";
+
 import LoginView from "@/views/login/LoginView.vue";
 import LayoutView from "@/views/layout/LayoutView.vue";
 import LoadingBar from "@/components/LoadingBar.vue";
@@ -125,8 +128,14 @@ export default {
     },
   },
 
-  created() {
-    this.splashing();
+  async created() {
+    const response = await login({
+      username: "jnhk123@kakao.com",
+      password: "abcd1234!",
+    });
+    console.log(response);
+
+    // this.splashing();
   },
 };
 </script>

@@ -3,7 +3,6 @@ import store from "@/store";
 
 const instance = axios.create({
   baseURL: process.env.VUE_APP_API_URL,
-  // baseURL: "http://localhost:8090/",
   timeout: 20000,
 });
 
