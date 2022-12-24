@@ -8,6 +8,7 @@
     </v-system-bar>
 
     <VueSplash></VueSplash>
+    <LoginView></LoginView>
 
     <v-bottom-navigation>
       <v-btn value="record">
@@ -111,6 +112,8 @@ export default {
 
   data() {
     return {
+      username: "",
+      password: "",
       isLoaded: false,
       nowTime: dayjs().format("HH:mm"),
     };
@@ -129,9 +132,13 @@ export default {
   },
 
   async created() {
+    // if (!this.username) {
+    //   alert("유저 ID를 입력하세요");
+    // }
+
     const response = await login({
-      username: "jnhk123@kakao.com",
-      password: "abcd1234!",
+      username: "wisejini@hanmail.net",
+      password: "test1234!",
     });
     console.log(response);
 

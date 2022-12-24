@@ -1,14 +1,10 @@
 <template>
   <v-row justify="center">
     <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1>로그인</h1>
+      아이디 : <input type="text" v-model="username" /> <br />
+      비밀번호 : <input type="text" v-model="password" /> <br /><br />
+      <v-btn @click="login">로그인</v-btn><br />
+      <!-- <v-btn @click="loginKakao">카카오로 시작하기</v-btn> -->
     </div>
   </v-row>
 </template>
@@ -20,7 +16,7 @@ import { login as _login, getUser } from "@/service/auth";
 export default {
   data: () => ({
     showPassword: false,
-    id: "",
+    username: "",
     password: "",
   }),
 
@@ -29,7 +25,10 @@ export default {
 
     async login() {
       try {
-        const response = await _login({ id: this.id, pwd: this.password });
+        const response = await _login({
+          id: this.username,
+          pwd: this.password,
+        });
         this.setToken(response.data.token);
 
         const user = await getUser();
@@ -44,4 +43,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+input {
+  border: 1px solid gray;
+}
+</style>

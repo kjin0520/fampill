@@ -28,6 +28,11 @@ export default {
   },
 
   mutations: {
+    setId(state, id) {
+      state.id = id;
+      sessionStorage.setItem("user-id", id);
+    },
+
     setName(state, name) {
       state.user.name = name;
       sessionStorage.setItem("user-name", name);
@@ -37,20 +42,15 @@ export default {
       state.token = token;
       sessionStorage.setItem("access-token", token);
     },
-
-    setId(state, id) {
-      state.id = id;
-      sessionStorage.setItem("user-id", id);
-    },
   },
 
   actions: {
-    setName({ commit }, name) {
-      commit("setName", name);
-    },
-
     setId({ commit }, id) {
       commit("setId", id);
+    },
+
+    setName({ commit }, name) {
+      commit("setName", name);
     },
 
     setToken({ commit }, token) {

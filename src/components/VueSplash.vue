@@ -7,17 +7,14 @@
       <br />
       <br />
       <br />
-      <br />
-
       <span class="text-title">FamPill</span>
-      <br />
-      <br />
-      <br />
-
-      <v-img src="@/image/group1098.png" max-width="329" max-height="324">
-      </v-img>
-    </div> </v-row
-  >//
+      <v-img
+        src="@/image/group1098.png"
+        max-width="329"
+        max-height="324"
+      ></v-img>
+    </div>
+  </v-row>
 </template>
 
 <script></script>
